@@ -1,4 +1,4 @@
-const {Builder, By, Key, until, Button} = require('selenium-webdriver');
+const {Builder, By, Key, until} = require('selenium-webdriver');
 
 (async function testeCalc(){
     let driver = await new Builder().forBrowser('chrome').build();
@@ -17,6 +17,7 @@ const {Builder, By, Key, until, Button} = require('selenium-webdriver');
         await driver.findElement(By.name('q')).sendKeys(resultado + " de esparta" , Key.RETURN);
         await driver.wait(until.titleIs('300 de esparta - Pesquisa Google'), 1000);
 
+        
     }finally{
         await driver.quit();
         
